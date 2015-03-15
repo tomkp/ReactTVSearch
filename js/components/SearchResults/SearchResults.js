@@ -22,17 +22,15 @@ var SearchResults = React.createClass({
 			return null;
 		}
 
-		for (var result in results) {
+		for (var iPos = 0; iPos < results.length; iPos += 1) {
+			var result = results[iPos];
 			resultElements.push(<SearchResult result={result}/>);
 		}
 
 		return (
-			<section id="main">
-				<label>Results</label>
-				<ul id="search-results" class="search-results clearfix grid-list">
-					{resultElements}
-				</ul>
-			</section>
+			<ul id="search-results" className="search-results clearfix grid-list">
+				{resultElements}
+			</ul>
 		);
 	}
 

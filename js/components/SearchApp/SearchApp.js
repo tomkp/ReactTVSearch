@@ -1,4 +1,4 @@
-var Header = require('../Header/Header.js');
+var Header = require('../Header/Header');
 var SearchResults = require('../SearchResults/SearchResults');
 var React = require('react');
 var SearchStore = require('../../stores/SearchStore');
@@ -28,9 +28,18 @@ var SearchApp = React.createClass({
 	 */
 	render: function () {
 		return (
-			<div>
-				<Header />
-				<SearchResults results={this.state.results}/>
+			<div id="page">
+				<div className="skycom-container clearfix">
+					<div className="skycom-12">
+						<Header/>
+					</div>
+				</div>
+
+				<div className="skycom-container clearfix main">
+					<div id="content" className="skycom-12">
+						<SearchResults results={this.state.results}/>
+					</div>
+				</div>
 			</div>
 		);
 	},
@@ -44,5 +53,6 @@ var SearchApp = React.createClass({
 	}
 
 });
+
 
 module.exports = SearchApp;

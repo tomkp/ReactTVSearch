@@ -32,16 +32,27 @@ var SearchBox = React.createClass({
 	 */
 	render: function () /*object*/ {
 		return (
-			<input
-				className={this.props.className}
-				id={this.props.id}
-				placeholder={this.props.placeholder}
-				onBlur={this._save}
-				onChange={this._onChange}
-				onKeyDown={this._onKeyDown}
-				value={this.state.value}
-				autoFocus={true}
-				/>
+
+			<div className="search-field-wrapper">
+				<div className="search-form">
+					<i className="skycon-search"></i>
+					<i className="skycon-close"></i>
+					<input
+						className="search-field"
+						type="text"
+						name="term"
+						placeholder="Enter a programme or movie"
+						autoComplete="off"
+						autoCapitalize="off"
+						autoCorrect="off"
+						spellCheck="false"
+						id="search-field"
+						onChange={this._onChange}
+						onKeyDown={this._onKeyDown}
+						value={this.state.value}/>
+					<button className="search-button" type="submit">Search</button>
+				</div>
+			</div>
 		);
 	},
 
