@@ -13,8 +13,6 @@ var SearchResults = React.createClass({
 	 */
 	render: function () {
 
-		console.log('Main Section Render Start');
-
 		var results = this.props.results;
 		var resultElements = [];
 
