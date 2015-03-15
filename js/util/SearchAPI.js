@@ -1,23 +1,21 @@
-
-
-var fake =  [
-	{
-		title: 'Test Title 1',
-		description: 'description 1'
-	},
-	{
-		title: 'Test Title 2',
-		description: 'description 2'
-	}
-];
-
-
+var jsonp = require('../util/jsonp');
+var BASE_URL = 'http://api.search.sky.com/query.json?callback=callback&category=newtv&term='
 
 var SearchAPI = {
 
 	search: function(term, success, failure) {
-		console.log('SearchAPI:search:' + term);
-		success(fake);
+
+		jsonp.send(BASE_URL + term, {
+			callbackName: 'callback',
+			onSuccess: function(json){
+				success(json);
+			},
+			onTimeout: function(){
+				failure('timeout');
+			},
+			timeout: 5
+		});
+
 	}
 
 };

@@ -4,7 +4,7 @@ var ReactPropTypes = React.PropTypes;
 var SearchResult = React.createClass({
 
   propTypes: {
-   result: ReactPropTypes.object.isRequired
+	  result: ReactPropTypes.object.isRequired
   },
 
   /**
@@ -14,7 +14,10 @@ var SearchResult = React.createClass({
     var result = this.props.result;
 
     return (
-      <li>result.title</li>
+      <li>
+        <div class="title">{result.title}</div>
+	    <div class="summary">{result.summary}</div>
+      </li>
     );
   }
 

@@ -48,7 +48,7 @@ AppDispatcher.register(function(payload) {
 
 		case ACTION_TYPES.SEARCH_SUCCESS:
 			console.log('SEARCH SUCCESS');
-			_results = action.results;
+			_results = action.results.searchResults;
 			SearchStore.emitChange();
 			break;
 
