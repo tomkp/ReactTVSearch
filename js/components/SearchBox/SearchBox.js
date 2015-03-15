@@ -9,10 +9,10 @@
 
 var React = require('react');
 var ReactPropTypes = React.PropTypes;
-var SearchActions = require('../actions/SearchActions');
+var SearchActions = require('../../actions/SearchActions');
 var ENTER_KEY_CODE = 13;
 
-var SearchTextInput = React.createClass({
+var SearchBox = React.createClass({
 
 	propTypes: {
 		className: ReactPropTypes.string,
@@ -74,4 +74,4 @@ var SearchTextInput = React.createClass({
 
 });
 
-module.exports = SearchTextInput;
+module.exports = SearchBox;
