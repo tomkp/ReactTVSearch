@@ -1,10 +1,10 @@
-var AppDispatcher = require('../dispatcher/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
-var ACTION_TYPES = require('../constants/ActionTypes');
 var assign = require('object-assign');
 
-var CHANGE_EVENT = 'change';
+var AppDispatcher = require('../dispatcher/AppDispatcher');
+var ACTION_TYPES = require('../constants/ActionTypes');
 
+var CHANGE_EVENT = 'change';
 var  _results = [];
 
 var SearchStore = assign({}, EventEmitter.prototype, {
@@ -14,13 +14,10 @@ var SearchStore = assign({}, EventEmitter.prototype, {
 	 * @return {object}
 	 */
 	getAll: function() {
-		console.log('SearchStore:getAll');
-
 		return _results;
 	},
 
 	emitChange: function() {
-		console.log('SearchStore:EmitChange');
 		this.emit(CHANGE_EVENT);
 	},
 

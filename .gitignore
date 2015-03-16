@@ -1,6 +1,5 @@
-bundle.js
-bundle.min.js
-.bundle.js
+build
+dist
 bower_components
 node_modules
 npm-debug.log
