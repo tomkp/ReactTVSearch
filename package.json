@@ -19,6 +19,7 @@
     "babel-core": "^4.6.6",
     "babelify": "^5.0.4",
     "browserify": "^9.0.3",
+    "catw": "^0.2.0",
     "core-js": "^0.7.2",
     "jest-cli": "^0.4.0",
     "less": "^2.4.0",
@@ -28,9 +29,12 @@
   },
   "scripts": {
     "test": "jest",
-	"build-js": "browserify src/js/Application.js -t babelify -o dist/app.js",
-	"build-css": "lessc src/less/app.less dist/app.css",
-	"build": "npm run build-js && npm run build-css"
+    "build-js": "browserify src/js/Application.js -t babelify -o dist/app.js",
+    "build-css": "lessc src/less/*.less dist/app.css",
+    "build": "npm run build-js && npm run build-css",
+    "watch-js": "watchify src/**/*.js -t babelify -o dist/app.js -dv",
+    "watch-css": "catw -c 'lessc -' 'src/less/*.less' -o dist/app.css -v",
+    "watch": "npm run watch-css & npm run watch-js"
   },
   "jest": {
     "rootDir": "./src",
